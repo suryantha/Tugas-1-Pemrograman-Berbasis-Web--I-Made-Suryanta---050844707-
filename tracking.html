@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="stok.html">Informasi Bahan Ajar</a>
+        <a href="tracking.html">Tracking Pengiriman</a>
+        <div class="dropdown">
+            <button class="dropbtn">Laporan
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Monitoring Progress DO Bahan Ajar</a>
+                <a href="#">Rekap Bahan Ajar</a>
+            </div>
+        </div>
+        <a href="#histori transaksi">Histori Transaksi Bahan Ajar</a>
+        <button type="button" class="logoutbtn" onclick="logout();">Logout</button>
+    </div>
+    <h3>Tracking Bahan Ajar</h3>
+    <div>
+        <div>
+        <label>No. DO </label>
+        </div>
+        <input type="text" id="nodo" placeholder="Masukkan No. DO">
+        <button onclick="lacak()">Lacak</button>
+        </div>
+    </div>
+    <div id="trackingResult">
+        <div id="atas" class="flex bg-gray p-10">
+            <p class="w-50">Nama</p>
+            <p class="w-50">Nomor DO</p>
+            <p class="w-50">Status</p>
+            <p class="w-50">Paket</p>
+            <p class="w-50">Expedisi</p>
+            <p class="w-50">Tanggal Kirim</p>
+            <p class="w-50">Total</p>
+        </div>
+        <div id="bawah"></div>
+        <div class="timeline">
+            <div class="container left">
+                <div class="content">
+                    <h2>2017</h2>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <h2>2016</h2>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        window.onload = function () {
+            if (!localStorage.getItem("loginUser")) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Bahan Ajar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="stok.html">Informasi Bahan Ajar</a>
+        <a href="tracking.html">Tracking Pengiriman</a>
+        <div class="dropdown">
+            <button class="dropbtn">Laporan
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Monitoring Progress DO Bahan Ajar</a>
+                <a href="#">Rekap Bahan Ajar</a>
+            </div>
+        </div>
+        <a href="#histori transaksi">Histori Transaksi Bahan Ajar</a>
+        <button type="button" class="logoutbtn" onclick="logout();">Logout</button>
+    </div>
+    <h3>Informasi Stok Bahan Ajar</h3>
+    <button id="myBtn">Tambah Bahan Ajar</button>
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tambah Bahan Ajar</h2>
+            <form id="formTambahBahanAjar">
+                <div>
+                    <label for="kodeLokasi"><b>Kode Lokasi</b></label>
+                    <input type="text" placeholder="Enter Kode Lokasi" name="kodeLokasi" required>
+                </div>
+                <div>
+                    <label for="kodeBarang"><b>Kode Barang</b></label>
+                    <input type="text" placeholder="Enter Kode Barang" name="kodeBarang" required>
+                </div>
+                <div>
+                    <label for="namaBarang"><b>Nama Barang</b></label>
+                    <input type="text" placeholder="Enter Nama Barang" name="namaBarang" required>
+                </div>
+                <div>
+                    <label for="jenisBarang"><b>Jenis Barang</b></label>
+                    <input type="text" placeholder="Enter Jenis Barang" name="jenisBarang" required>
+                </div>
+                <div>
+                    <label for="edisi"><b>Edisi</b></label>
+                    <input type="text" placeholder="Enter Edisi" name="edisi" required>
+                </div>
+                <div>
+                    <label for="stok"><b>Stok</b></label>
+                    <input type="number" placeholder="Enter Stok" name="stok" required>
+                </div>
+                <div>
+                    <label for="cover"><b>Cover</b></label>
+                    <input type="text" placeholder="Enter Cover" name="cover" required>
+                </div>
+                <button type="button" onclick="tambahBahanAjar()">Tambah</button>
+            </form>
+        </div>
+
+    </div>
+    </div>
+    <div id="bahanAjarResult" class="grid">
+
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        tampilBahanAjar();
+    </script>
+    <script>
+        window.onload = function () {
+            if (!localStorage.getItem("loginUser")) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    <div style="width:70%; margin:25px auto;">
+        <form method="post" onsubmit="login();">
+            <div class="imgcontainer">
+                <img src="img/logo_ut.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+
+                <label for="email"><b>Email</b></label>
+                <div>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                </div>
+
+                <label for="password"><b>Password</b></label>
+                <div>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                </div>
+
+                <button type="submit">Login</button>
+                <label>
+                <div>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </div>
+                </label>
+            </div>
+
+            <div 
+            class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <span class="password">Forgot <a href="#">password?</a></span>
+                <button type="button" class="signupbtn">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+     <script>
+        window.onload = function () {
+            if (localStorage.getItem("loginUser")) {
+                window.location.href = "dashboard.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
